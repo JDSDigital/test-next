@@ -23,6 +23,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest-dom": "^5.4.0",
     "eslint-plugin-testing-library": "^6.3.0",
+    "prettier": "^3.3.3",
     "typescript": "^5"
   }
 }
