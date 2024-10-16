@@ -16,4 +16,9 @@
 
 ### Estados locales
 
+- Uso del useState
+- Uso del useEffect
+
 ### Estados globales
+
+- State lifting/prop drilling
