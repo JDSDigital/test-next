@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Button } from '../components/Button'
 import { HomeScreenRoot } from './HomeScreen.styles'
 
@@ -9,7 +10,8 @@ const HomeScreen = () => {
       <Button>Button 3</Button>
       <Button>Button 4</Button>
       <Button>Button 5</Button>
-      <Button type="submit">Submit</Button>
+
+      <Link href="./test">Go to test page</Link>
     </HomeScreenRoot>
   )
 }
