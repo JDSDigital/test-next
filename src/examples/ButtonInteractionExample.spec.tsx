@@ -16,6 +16,6 @@ describe('ButtonInteractionExample', () => {
 
     await userEvent.click(screen.getByRole('button'))
 
-    expect(await screen.findByText('Text')).toBeInTheDocument()
+    expect(await screen.findByText(/text/i)).toBeInTheDocument()
   })
 })

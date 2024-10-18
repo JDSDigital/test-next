@@ -6,6 +6,11 @@ export const ButtonRoot = styled('button', {
   border: 'none',
   borderRadius: '4px',
 
+  '&:disabled': {
+    backgroundColor: '#777',
+    cursor: 'not-allowed',
+  },
+
   variants: {
     variant: {
       primary: {
