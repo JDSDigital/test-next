@@ -6,6 +6,10 @@ type ButtonProps = ButtonOwnProps & {
   type?: 'button' | 'submit'
 }
 
-export const Button = ({ type = 'button', children }: ButtonProps) => {
-  return <ButtonRoot type={type}>{children}</ButtonRoot>
+export const Button = ({ type = 'button', children, ...rest }: ButtonProps) => {
+  return (
+    <ButtonRoot type={type} {...rest}>
+      {children}
+    </ButtonRoot>
+  )
 }
