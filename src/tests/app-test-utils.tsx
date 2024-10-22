@@ -29,7 +29,7 @@ export const router = {
   isPreview: false,
 }
 
-const api = createApi({ offline: true })
+export const api = createApi({ offline: true })
 
 export const render = (component: ReactElement, renderOptions: any = {}) => {
   const Wrapper = ({ children }: { children: ReactNode }) => {

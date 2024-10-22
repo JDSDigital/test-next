@@ -1,13 +1,24 @@
-import { render, router, screen, userEvent } from '@/tests/app-test-utils'
+import { api, render, screen, waitFor } from '@/tests/app-test-utils'
 import HomeScreen from './HomeScreen'
+import { productsFixture } from '@/products/infrastructure/fixtures/productsFixture'
 
 describe('HomeScreen', () => {
-  it('can navigate to test screen', async () => {
+  it('calls products api on render', async () => {
+    jest.spyOn(api.products, 'getProducts')
+
     render(<HomeScreen />)
 
-    await userEvent.click(screen.getByText('Go to test page'))
+    await waitFor(() => {
+      expect(api.products.getProducts).toHaveBeenCalled()
+    })
+  })
 
-    expect(router.push).toHaveBeenCalled()
+  it('shows products', async () => {
+    render(<HomeScreen />)
+
+    const [product] = productsFixture
+
+    expect(await screen.findByText(product.name)).toBeInTheDocument()
   })
 
   it('does not have basic accesibility issues', async () => {
