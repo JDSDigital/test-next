@@ -1,12 +1,16 @@
+import { useGetProducts } from '@/products/infrastructure/hooks/useGetProducts'
 import { HomeScreenRoot } from './HomeScreen.styles'
-import { productsFixture } from '../products/infrastructure/fixtures/productsFixture'
 
 const HomeScreen = () => {
+  const { products, isLoading } = useGetProducts({})
+
+  if (isLoading) {
+    return <h1>Loading...</h1>
+  }
+
   return (
     <HomeScreenRoot>
-      {productsFixture.map((product) => (
-        <h2 key={product.id}>{product.name}</h2>
-      ))}
+      {products?.map((product) => <h2 key={product.id}>{product.name}</h2>)}
     </HomeScreenRoot>
   )
 }
