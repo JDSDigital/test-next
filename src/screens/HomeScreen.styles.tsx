@@ -4,7 +4,13 @@ export const HomeScreenRoot = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'center',
   height: '100vh',
-  gap: '28px',
+  padding: '24px',
+})
+
+export const HomeScreenProductContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '24px',
+  width: '50%',
 })
