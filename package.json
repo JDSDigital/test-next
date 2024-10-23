@@ -10,7 +10,8 @@
     "husky": "husky init",
     "prepare": "husky",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
