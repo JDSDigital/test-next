@@ -1,12 +1,12 @@
 import { api, render, screen, waitFor } from '@/tests/app-test-utils'
-import HomeScreen from './HomeScreen'
+import ProductList from './ProductList'
 import { productsFixture } from '@/products/infrastructure/fixtures/productsFixture'
 
-describe('HomeScreen', () => {
+describe('ProductList', () => {
   it('calls products api on render', async () => {
     jest.spyOn(api.products, 'getProducts')
 
-    render(<HomeScreen />)
+    render(<ProductList />)
 
     await waitFor(() => {
       expect(api.products.getProducts).toHaveBeenCalled()
@@ -14,7 +14,7 @@ describe('HomeScreen', () => {
   })
 
   it('shows products', async () => {
-    render(<HomeScreen />)
+    render(<ProductList />)
 
     const [product] = productsFixture
 
@@ -22,7 +22,7 @@ describe('HomeScreen', () => {
   })
 
   it('does not have basic accesibility issues', async () => {
-    const { container } = render(<HomeScreen />)
+    const { container } = render(<ProductList />)
 
     expect(container).toHTMLValidate()
   })

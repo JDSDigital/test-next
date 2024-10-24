@@ -1,5 +1,5 @@
-import HomeScreen from '@/products/infrastructure/screens/HomeScreen'
+import { ProductList as ProductListScreen } from '@/products/infrastructure/screens/ProductList'
 
-export default function Home() {
-  return <HomeScreen />
+export default function ProductList() {
+  return <ProductListScreen />
 }

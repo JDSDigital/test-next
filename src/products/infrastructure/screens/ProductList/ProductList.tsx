@@ -1,8 +1,8 @@
 import { useGetProducts } from '@/products/infrastructure/hooks/useGetProducts'
-import { HomeScreenProductContainer, HomeScreenRoot } from './HomeScreen.styles'
-import { ProductCard } from './ProductCard'
+import { ProductListProductContainer, ProductListRoot } from './ProductList.styles'
+import { ProductCard } from '../ProductCard'
 
-const HomeScreen = () => {
+export const ProductList = () => {
   const { products, isLoading } = useGetProducts({})
 
   if (isLoading) {
@@ -10,12 +10,10 @@ const HomeScreen = () => {
   }
 
   return (
-    <HomeScreenRoot>
-      <HomeScreenProductContainer>
+    <ProductListRoot>
+      <ProductListProductContainer>
         {products?.map((product) => <ProductCard key={product.id} product={product} />)}
-      </HomeScreenProductContainer>
-    </HomeScreenRoot>
+      </ProductListProductContainer>
+    </ProductListRoot>
   )
 }
-
-export default HomeScreen

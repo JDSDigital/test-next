@@ -1,6 +1,6 @@
 import { styled } from '@/stitches.config'
 
-export const HomeScreenRoot = styled('div', {
+export const ProductListRoot = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -8,7 +8,7 @@ export const HomeScreenRoot = styled('div', {
   padding: '24px',
 })
 
-export const HomeScreenProductContainer = styled('div', {
+export const ProductListProductContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '24px',
