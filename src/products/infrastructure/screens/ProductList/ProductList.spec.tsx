@@ -1,5 +1,5 @@
 import { api, render, screen, waitFor } from '@/tests/app-test-utils'
-import ProductList from './ProductList'
+import { ProductList } from './ProductList'
 import { productsFixture } from '@/products/infrastructure/fixtures/productsFixture'
 
 describe('ProductList', () => {

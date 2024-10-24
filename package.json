@@ -11,7 +11,8 @@
     "prepare": "husky",
     "test": "jest",
     "test:watch": "jest --watch",
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "pre-push": "yarn typecheck && yarn test"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",

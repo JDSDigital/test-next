@@ -1,4 +1,5 @@
-import { ColorTokens, styled, theme } from '@/stitches.config'
+import type { ColorTokens } from '@/stitches.config'
+import { styled, theme } from '@/stitches.config'
 
 const color = Object.keys(theme.colors).reduce((acc, color) => {
   return { ...acc, [color]: { '&': { color: `$${color}` } } }
