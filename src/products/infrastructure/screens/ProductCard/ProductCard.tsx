@@ -15,7 +15,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   })
 
   return (
-    <ProductCardRoot>
+    <ProductCardRoot href={`/products/${product.id}`}>
       <Text weight="bold" color="main-500">
         {product.provider}
       </Text>

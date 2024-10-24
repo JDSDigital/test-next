@@ -1,10 +1,10 @@
 import { useApi } from '@/context/ApiContext'
 import type { Product } from '@/products/domain/Product'
-import type { GetProducts } from '@/products/domain/ProductsRepository'
+import type { GetProductDetail } from '@/products/domain/ProductsRepository'
 import { useEffect, useMemo, useState } from 'react'
 
-export const useGetProducts = (params: GetProducts.Params) => {
-  const [products, setProducts] = useState<Product[] | undefined>(undefined)
+export const useGetProductDetail = (params: GetProductDetail.Params) => {
+  const [product, setProduct] = useState<Product | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(true)
 
   const memoParams = useMemo(() => params, [params])
@@ -13,10 +13,10 @@ export const useGetProducts = (params: GetProducts.Params) => {
 
   useEffect(() => {
     api.products
-      .getProducts(memoParams)
+      .getProductDetail(memoParams)
       .then((products) => {
         setIsLoading(false)
-        setProducts(products)
+        setProduct(products)
       })
       .catch((error) => {
         console.error(error)
@@ -24,5 +24,5 @@ export const useGetProducts = (params: GetProducts.Params) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return { products, isLoading }
+  return { product, isLoading }
 }

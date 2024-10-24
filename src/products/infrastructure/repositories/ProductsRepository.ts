@@ -12,5 +12,15 @@ export function createProductsRepository(): ProductRepository {
 
       return products
     },
+
+    getProductDetail: async ({ id }) => {
+      const { product } = await fetch(`/api/products/${id}`, {
+        method: 'POST',
+      }).then((response) => {
+        return response.json()
+      })
+
+      return product
+    },
   }
 }

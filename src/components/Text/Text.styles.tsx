@@ -6,6 +6,7 @@ const color = Object.keys(theme.colors).reduce((acc, color) => {
 
 export const TextRoot = styled('span', {
   fontFamily: 'Helvetica',
+  color: '$main-600',
 
   variants: {
     color,
