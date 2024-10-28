@@ -14,7 +14,7 @@ export const ProductDetail = ({ id }: ProductDetailProps) => {
 
   return (
     <div>
-      <Text>Product Detail {product?.id}</Text>
+      <Text>{product.name}</Text>
     </div>
   )
 }

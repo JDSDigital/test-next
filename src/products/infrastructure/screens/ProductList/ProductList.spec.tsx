@@ -1,4 +1,4 @@
-import { api, render, screen, waitFor } from '@/tests/app-test-utils'
+import { api, render, router, screen, userEvent, waitFor } from '@/tests/app-test-utils'
 import { ProductList } from './ProductList'
 import { productsFixture } from '@/products/infrastructure/fixtures/productsFixture'
 
@@ -19,6 +19,24 @@ describe('ProductList', () => {
     const [product] = productsFixture
 
     expect(await screen.findByText(product.name)).toBeInTheDocument()
+  })
+
+  it('navigates to product detail', async () => {
+    render(<ProductList />)
+
+    const [product] = productsFixture
+
+    const productLink = await screen.findByText(product.name)
+
+    await userEvent.click(productLink)
+
+    await waitFor(() => {
+      expect(router.push).toHaveBeenCalledWith(
+        `/products/${product.id}`,
+        `/products/${product.id}`,
+        { scroll: true },
+      )
+    })
   })
 
   it('does not have basic accesibility issues', async () => {

@@ -12,7 +12,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "typecheck": "tsc -p tsconfig.json",
-    "pre-push": "yarn typecheck && yarn test"
+    "pre-push": "yarn typecheck && yarn test --bail"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
