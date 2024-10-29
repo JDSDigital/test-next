@@ -12,7 +12,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "typecheck": "tsc -p tsconfig.json",
-    "pre-push": "yarn typecheck && yarn test --bail"
+    "pre-push": "yarn typecheck && yarn test --bail",
+    "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",

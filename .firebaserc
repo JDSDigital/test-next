@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "jdsosa-testing-nest"
+  },
+  "targets": {
+    "jdsosa-testing-nest": {
+      "hosting": {
+        "development": [
+          "jdsosa-testing-next"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
