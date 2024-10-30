@@ -5,7 +5,7 @@ export function createProductsRepository(): ProductRepository {
     getProducts: async (params) => {
       const { products } = await fetch('/api/products', {
         method: 'POST',
-        body: params,
+        body: JSON.stringify(params),
       }).then((response) => {
         return response.json()
       })
